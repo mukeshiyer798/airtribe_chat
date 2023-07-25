@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>Airtribe Chat Room</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <!-- Include Tailwind CSS -->
+  <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.15/dist/tailwind.min.css" rel="stylesheet">
+</head>
+<body class="bg-white font-sans">
+  <div class="container mx-auto px-4 py-8">
+    <div class="max-w-lg mx-auto">
+      <div class="bg-white shadow-md rounded p-6">
+        <h1 class="text-3xl font-semibold mb-4 text-center">Airtribe Chat Room</h1>
+        <ul id="messages" class="list-none p-0"></ul>
+        <form id="message-form" class="mt-4 flex">
+          <input id="message-input" type="text" class="flex-1 py-2 px-4 rounded-l focus:outline-none focus:ring-2 focus:ring-indigo-500 border" placeholder="Enter your message..." required>
+          <button type="submit" class="px-4 py-2 rounded-r bg-indigo-500 text-white">Send</button>
+        </form>
+      </div>
+    </div>
+  </div>
+
+  <!-- Include jQuery -->
+  <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+  <!-- Include Socket.IO and your app.js -->
+  <script src="/socket.io/socket.io.js"></script>
+  <script src="./index.js"></script>
+
+  <!-- Custom styles -->
+  <style>
+    body {
+      font-family: 'Roboto', sans-serif;
+    }
+
+    #messages {
+      max-height: 300px;
+      overflow-y: auto;
+    }
+
+    .joined-message {
+      color: #999;
+      font-size: 0.9rem;
+      font-weight: lighter;
+      text-align: center;
+      margin-bottom: 0.5rem;
+    }
+  </style>
+</body>
+</html>
